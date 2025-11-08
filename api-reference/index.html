@@ -1,0 +1,1443 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../withroact/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>API Reference - Rodux Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rodux-api-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Rodux Documentation" class="md-header__button md-logo" aria-label="Rodux Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Rodux Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Roblox/rodux" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Roblox/rodux
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Rodux Documentation" class="md-nav__button md-logo" aria-label="Rodux Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Rodux Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Roblox/rodux" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Roblox/rodux
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/motivation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Motivation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/store/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Store
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/reducers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reducers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Advanced
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/error-reporters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Error Reporters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Middleware
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/thunks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thunks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complete Example
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Debugging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../withroact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Usage with Roact
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#roduxstore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rodux.Store
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rodux.Store">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storenew" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store.new
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storechanged" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store.changed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storedispatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store:dispatch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storegetstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store:getState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storedestruct" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store:destruct
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storeflush" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store:flush
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signal
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Signal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalconnect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signal:connect
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helper-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helper functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Helper functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roduxcombinereducers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rodux.combineReducers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roduxcreatereducer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rodux.createReducer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roduxmakeactioncreator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rodux.makeActionCreator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Middleware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roduxloggermiddleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rodux.loggerMiddleware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roduxthunkmiddleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rodux.thunkMiddleware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roduxmakethunkmiddleware-unreleased" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rodux.makeThunkMiddleware (unreleased)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-reporters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Reporters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Reporters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reportreducererror" class="md-nav__link">
+    <span class="md-ellipsis">
+      reportReducerError
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reportupdateerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      reportUpdateError
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#roduxstore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rodux.Store
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rodux.Store">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storenew" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store.new
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storechanged" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store.changed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storedispatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store:dispatch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storegetstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store:getState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storedestruct" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store:destruct
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storeflush" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store:flush
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signal
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Signal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signalconnect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signal:connect
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helper-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helper functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Helper functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roduxcombinereducers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rodux.combineReducers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roduxcreatereducer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rodux.createReducer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roduxmakeactioncreator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rodux.makeActionCreator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Middleware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roduxloggermiddleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rodux.loggerMiddleware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roduxthunkmiddleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rodux.thunkMiddleware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roduxmakethunkmiddleware-unreleased" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rodux.makeThunkMiddleware (unreleased)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-reporters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Reporters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Reporters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reportreducererror" class="md-nav__link">
+    <span class="md-ellipsis">
+      reportReducerError
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reportupdateerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      reportUpdateError
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="rodux-api-reference">Rodux API Reference<a class="headerlink" href="#rodux-api-reference" title="Permanent link">&para;</a></h1>
+<h2 id="roduxstore">Rodux.Store<a class="headerlink" href="#roduxstore" title="Permanent link">&para;</a></h2>
+<p>The Store class is the core piece of Rodux. It is the state container that you create and use.</p>
+<h3 id="storenew">Store.new<a class="headerlink" href="#storenew" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Store.new(reducer, [initialState, [middlewares, [errorReporter, [devtools]]]]) -&gt; Store
+</code></pre></div>
+<p>Creates and returns a new Store.</p>
+<ul>
+<li><code>reducer</code> is the store's root reducer function, and is invoked whenever an action is dispatched. It must be a pure function.</li>
+<li><code>initialState</code> is the store's initial state. This should be used to load a saved state from storage.</li>
+<li><code>middlewares</code> is a list of <a href="#middleware">middleware functions</a> to apply each time an action is dispatched to the store.</li>
+<li><code>errorReporter</code> is a <a href="../advanced/error-reporters/">error reporter object</a> that allows custom handling of errors that occur during different phases of the store's updates</li>
+<li><code>devtools</code> is a <a href="../advanced/devtools/">custom object</a> that you can provide in order to profile, log, or control the store for testing and debugging purposes</li>
+</ul>
+<p>The store will automatically dispatch an initialization action with a <code>type</code> of <code>@@INIT</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The initialization action does not pass through any middleware prior to reaching the reducer.</p>
+</div>
+<h3 id="storechanged">Store.changed<a class="headerlink" href="#storechanged" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nv">store</span><span class="p">.</span><span class="py">changed</span><span class="p">:</span><span class="nf">connect</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">newState</span><span class="p">,</span><span class="w"> </span><span class="nv">oldState</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">-- do something with newState or oldState</span>
+<span class="kr">end</span><span class="p">)</span>
+</code></pre></div>
+<p>A <a href="#Signal">Signal</a> that is fired when the store's state is changed up to once per frame.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Multiple actions can be grouped together into one changed event!</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Do not yield within any listeners on <code>changed</code>; an error will be thrown.</p>
+</div>
+<h3 id="storedispatch">Store:dispatch<a class="headerlink" href="#storedispatch" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>store:dispatch(action) -&gt; nil
+</code></pre></div>
+<p>Dispatches an action. The action will travel through all of the store's middlewares before reaching the store's reducer.</p>
+<p>Unless handled by middleware, <code>action</code> must contain a <code>type</code> field to indicate what type of action it is. No other fields are required.</p>
+<h3 id="storegetstate">Store:getState<a class="headerlink" href="#storegetstate" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>store:getState() -&gt; table
+</code></pre></div>
+<p>Gets the store's current state.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not modify this state! Doing so will cause <strong>serious</strong> bugs your code!</p>
+</div>
+<h3 id="storedestruct">Store:destruct<a class="headerlink" href="#storedestruct" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>store:destruct() -&gt; nil
+</code></pre></div>
+<p>Destroys the store, cleaning up its connections.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Attempting to use the store after <code>destruct</code> has been called will cause problems.</p>
+</div>
+<h3 id="storeflush">Store:flush<a class="headerlink" href="#storeflush" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>store:flush() -&gt; nil
+</code></pre></div>
+<p>Flushes the store's pending actions, firing the <code>changed</code> event if necessary.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><code>flush</code> is called by Rodux automatically every frame and usually doesn't need to be called manually.</p>
+</div>
+<h2 id="signal">Signal<a class="headerlink" href="#signal" title="Permanent link">&para;</a></h2>
+<p>The Signal class in Rodux represents a simple, predictable event that is controlled from within Rodux. It cannot be created outside of Rodux, but is used as <code>Store.changed</code>.</p>
+<h3 id="signalconnect">Signal:connect<a class="headerlink" href="#signalconnect" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>signal:connect(listener) -&gt; { disconnect }
+</code></pre></div>
+<p>Connects a listener to the signal. The listener will be invoked whenever the signal is fired.</p>
+<p><code>connect</code> returns a table with a <code>disconnect</code> function that can be used to disconnect the listener from the signal.</p>
+<h2 id="helper-functions">Helper functions<a class="headerlink" href="#helper-functions" title="Permanent link">&para;</a></h2>
+<p>Rodux supplies some helper functions to make creating complex reducers easier.</p>
+<h3 id="roduxcombinereducers">Rodux.combineReducers<a class="headerlink" href="#roduxcombinereducers" title="Permanent link">&para;</a></h3>
+<p>A helper function that can be used to combine multiple reducers into a new reducer.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="nv">reducer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">combineReducers</span><span class="p">({</span>
+<span class="w">    </span><span class="nv">key1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">reducer1</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">key2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">reducer2</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre></div>
+<p><code>combineReducers</code> is functionally equivalent to writing:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">reducer</span><span class="p">(</span><span class="nv">state</span><span class="p">,</span><span class="w"> </span><span class="nv">action</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nv">key1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">reducer1</span><span class="p">(</span><span class="nv">state</span><span class="p">.</span><span class="py">key1</span><span class="p">,</span><span class="w"> </span><span class="nv">action</span><span class="p">),</span>
+<span class="w">        </span><span class="nv">key2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">reducer2</span><span class="p">(</span><span class="nv">state</span><span class="p">.</span><span class="py">key2</span><span class="p">,</span><span class="w"> </span><span class="nv">action</span><span class="p">),</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="kr">end</span>
+</code></pre></div>
+<h3 id="roduxcreatereducer">Rodux.createReducer<a class="headerlink" href="#roduxcreatereducer" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Rodux.createReducer(initialState, actionHandlers) -&gt; reducer
+</code></pre></div>
+<p>A helper function that can be used to create reducers.</p>
+<p>Unlike JavaScript, Lua has no <code>switch</code> statement, which can make writing reducers that respond to lots of actions clunky.</p>
+<p>Reducers often have a structure that looks like this:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="nv">initialState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">reducer</span><span class="p">(</span><span class="nv">state</span><span class="p">,</span><span class="w"> </span><span class="nv">action</span><span class="p">)</span>
+<span class="w">    </span><span class="nv">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">state</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="nv">initialState</span>
+
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">action</span><span class="p">.</span><span class="py">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;setFoo&quot;</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">        </span><span class="c1">-- Handle the setFoo action</span>
+<span class="w">    </span><span class="kr">elseif</span><span class="w"> </span><span class="nv">action</span><span class="p">.</span><span class="py">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;setBar&quot;</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">        </span><span class="c1">-- Handle the setBar action</span>
+<span class="w">    </span><span class="kr">end</span>
+
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="nv">state</span>
+<span class="kr">end</span>
+</code></pre></div>
+<p><code>createReducer</code> can replace the chain of <code>if</code> statements in a reducer:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="nv">initialState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="kd">local</span><span class="w"> </span><span class="nv">reducer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">createReducer</span><span class="p">(</span><span class="nv">initialState</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">setFoo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">state</span><span class="p">,</span><span class="w"> </span><span class="nv">action</span><span class="p">)</span>
+<span class="w">        </span><span class="c1">-- Handle the setFoo action</span>
+<span class="w">    </span><span class="kr">end</span><span class="p">,</span>
+
+<span class="w">    </span><span class="nv">setBar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">state</span><span class="p">,</span><span class="w"> </span><span class="nv">action</span><span class="p">)</span>
+<span class="w">        </span><span class="c1">-- Handle the setBar action</span>
+<span class="w">    </span><span class="kr">end</span>
+<span class="p">})</span>
+</code></pre></div>
+<h3 id="roduxmakeactioncreator">Rodux.makeActionCreator<a class="headerlink" href="#roduxmakeactioncreator" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Rodux.makeActionCreator(name, actionGeneratorFunction) -&gt; actionCreator
+</code></pre></div>
+<p>A helper function that can be used to make action creators.</p>
+<p>Action creators are helper objects that will generate actions from provided data and automatically populate the <code>type</code> field.</p>
+<p>Actions often have a structure that looks like this:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="nv">MyAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;SetFoo&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>They are often generated by functions that take the action's data as arguments:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">SetFoo</span><span class="p">(</span><span class="nv">value</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nb">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;SetFoo&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nv">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">value</span><span class="p">,</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="kr">end</span>
+</code></pre></div>
+<p><code>makeActionCreator</code> looks similar, but it automatically populates the action's type with the action creator's name. This makes it easier to keep track of which actions your reducers are responding to:</p>
+<p>Make an action creator in <code>SetFoo.lua</code>:
+<div class="highlight"><pre><span></span><code><span class="kr">return</span><span class="w"> </span><span class="nf">makeActionCreator</span><span class="p">(</span><span class="s2">&quot;SetFoo&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">value</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">-- The action creator will automatically add the &#39;type&#39; field</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nv">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">value</span><span class="p">,</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="kr">end</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Then check for that action by name in <code>FooReducer.lua</code>:
+<div class="highlight"><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="nv">SetFoo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">require</span><span class="p">(</span><span class="nv">SetFoo</span><span class="p">)</span>
+<span class="p">...</span>
+<span class="kr">if</span><span class="w"> </span><span class="nv">action</span><span class="p">.</span><span class="py">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">SetFoo</span><span class="p">.</span><span class="py">name</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">    </span><span class="c1">-- change some state!</span>
+<span class="kr">end</span>
+</code></pre></div></p>
+<h2 id="middleware">Middleware<a class="headerlink" href="#middleware" title="Permanent link">&para;</a></h2>
+<p>Rodux provides an API that allows changing the way that actions are dispatched called <em>middleware</em>. To attach middleware to a store, pass a list of middleware as the third argument to <code>Store.new</code>.</p>
+<div class="admonition warn">
+<p class="admonition-title">Warn</p>
+<p>The middleware API changed in <a href="https://github.com/Roblox/rodux/pull/29">#29</a> -- middleware written against the old API will not work!</p>
+</div>
+<p>A single middleware is just a function with the following signature:</p>
+<div class="highlight"><pre><span></span><code>(nextDispatch, store) -&gt; (action) -&gt; result
+</code></pre></div>
+<p>A middleware is a function that accepts the next dispatch function in the <em>middleware chain</em>, as well as the store the middleware is being used with, and returns a new function. That function is called whenever an action is dispatched and can dispatch more actions, log to output, or perform any other side effects!</p>
+<p>A simple version of Rodux's <code>loggerMiddleware</code> is as easy as:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">simpleLogger</span><span class="p">(</span><span class="nv">nextDispatch</span><span class="p">,</span><span class="w"> </span><span class="nv">store</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">action</span><span class="p">)</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dispatched action of type&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">action</span><span class="p">.</span><span class="py">type</span><span class="p">)</span>
+
+<span class="w">        </span><span class="kr">return</span><span class="w"> </span><span class="nf">nextDispatch</span><span class="p">(</span><span class="nv">action</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">end</span>
+<span class="kr">end</span>
+</code></pre></div>
+<p>Rodux also ships with several middleware that address common use-cases.</p>
+<p>To apply middleware, pass a list of middleware as the third argument to <code>Store.new</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="nv">store</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">Store</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="nv">reducer</span><span class="p">,</span><span class="w"> </span><span class="nv">initialState</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">simpleLogger</span><span class="w"> </span><span class="p">})</span>
+</code></pre></div>
+<p>Middleware runs from left to right when an action is dispatched. That means that if a middleware does not call <code>nextDispatch</code> when handling an action, any middleware after it will not run.</p>
+<p>For a more detailed example, see the <a href="../advanced/middleware/">middleware guide</a>.</p>
+<h3 id="roduxloggermiddleware">Rodux.loggerMiddleware<a class="headerlink" href="#roduxloggermiddleware" title="Permanent link">&para;</a></h3>
+<p>A middleware that logs actions and the new state that results from them.</p>
+<p><code>loggerMiddleware</code> is useful for getting a quick look at what actions are being dispatched. In the future, Rodux will have tools similar to <a href="https://github.com/gaearon/redux-devtools">Redux's DevTools</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="nv">store</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">Store</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="nv">reducer</span><span class="p">,</span><span class="w"> </span><span class="nv">initialState</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">loggerMiddleware</span><span class="w"> </span><span class="p">})</span>
+</code></pre></div>
+<h3 id="roduxthunkmiddleware">Rodux.thunkMiddleware<a class="headerlink" href="#roduxthunkmiddleware" title="Permanent link">&para;</a></h3>
+<p>A middleware that allows thunks to be dispatched. Thunks are functions that perform asynchronous tasks or side effects, and can dispatch actions.</p>
+<p><code>thunkMiddleware</code> is comparable to Redux's <a href="https://github.com/gaearon/redux-thunk">redux-thunk</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="nv">store</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">Store</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="nv">reducer</span><span class="p">,</span><span class="w"> </span><span class="nv">initialState</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">thunkMiddleware</span><span class="w"> </span><span class="p">})</span>
+
+<span class="nv">store</span><span class="p">:</span><span class="nf">dispatch</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">store</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello from a thunk!&quot;</span><span class="p">)</span>
+
+<span class="w">    </span><span class="nv">store</span><span class="p">:</span><span class="nf">dispatch</span><span class="p">({</span>
+<span class="w">        </span><span class="nb">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;thunkAction&quot;</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="kr">end</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="roduxmakethunkmiddleware-unreleased">Rodux.makeThunkMiddleware (unreleased)<a class="headerlink" href="#roduxmakethunkmiddleware-unreleased" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Rodux.makeThunkMiddleware(extraArgument) -&gt; thunkMiddleware
+</code></pre></div>
+<p>A function that creates a thunk middleware that injects a custom argument when invoking thunks (in addition to the store itself). This is useful for cases like using an API service layer that could be swapped out for a mock service in tests.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="nv">myThunkMiddleware</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">Rodux</span><span class="p">.</span><span class="nf">makeThunkMiddleware</span><span class="p">(</span><span class="nv">myCustomArg</span><span class="p">)</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">store</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">Store</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="nv">reducer</span><span class="p">,</span><span class="w"> </span><span class="nv">initialState</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">myThunkMiddleware</span><span class="w"> </span><span class="p">})</span>
+
+<span class="nv">store</span><span class="p">:</span><span class="nf">dispatch</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">store</span><span class="p">,</span><span class="w"> </span><span class="nv">myCustomArg</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello from a thunk with extra argument:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">myCustomArg</span><span class="p">)</span>
+
+<span class="w">    </span><span class="nv">store</span><span class="p">:</span><span class="nf">dispatch</span><span class="p">({</span>
+<span class="w">        </span><span class="nb">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;thunkAction&quot;</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="kr">end</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="error-reporters">Error Reporters<a class="headerlink" href="#error-reporters" title="Permanent link">&para;</a></h2>
+<p>In version 3.0.0+, the Rodux store can be provided with a custom error reporter. This is a good entry point to enable improved logging, debugging, and analytics. </p>
+<p>The error reporter interface is an object with two functions:</p>
+<h3 id="reportreducererror">reportReducerError<a class="headerlink" href="#reportreducererror" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>reportReducerError(prevState, action, errorResult) -&gt; ()
+</code></pre></div>
+<p>Called when an error is thrown while processing an action through the reducer. If <a href="#RoduxthunkMiddleware">thunk middleware</a> is included, errors encountered while executing thunks will also be caught and reported through this function.</p>
+<p>The function receives these arguments:</p>
+<ul>
+<li><code>prevState</code> - the last known state value for the store. Since this reporter catches errors that occurred before the reducer finished resolving, the <code>prevState</code> value will be equal to the store state <em>before the action was processed</em></li>
+<li><code>action</code> - the action that was being processed when the error occurred</li>
+<li><code>errorResult</code> - an object describing the error that was caught</li>
+</ul>
+<p>The default error reporter will simply rethrow the value from the caught errorResult.</p>
+<h3 id="reportupdateerror">reportUpdateError<a class="headerlink" href="#reportupdateerror" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>reportUpdateError(prevState, currentState, actionLog, errorResult) -&gt; ()
+</code></pre></div>
+<p>Called when an error is thrown while updating listeners subscribed to the store state. Rodux flushes actions on a regular interval rather than synchronously, so there may be several actions queued up before each flush.</p>
+<p>The last 3 actions that were received before the current flush are provided to the error reporter. This is currently hard coded in the store logic, but could be overridden with an option in the future if it's useful to do so.</p>
+<p>The function receives these arguments:</p>
+<ul>
+<li><code>prevState</code> - the last known state that was flushed to consumers <em>before</em> the update that produced the error</li>
+<li><code>currentState</code> - the new store state that was being flushed to consumers when the error occurred. Some consumers may have already processed to this new state by the time the reporter is called</li>
+<li><code>actionLog</code> - an array containing the last three actions that were dispatched to the store, sorted from oldest to newest</li>
+<li><code>errorResult</code> - an object describing the error that was caught</li>
+</ul>
+<p>The default error reporter will simply rethrow the value from the caught errorResult.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
